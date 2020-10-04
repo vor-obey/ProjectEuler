@@ -99,14 +99,14 @@ let numberSeries = '37107287533902102798797998220837590246510135740250\
 20849603980134001723930671666823555245252804609722\
 53503534226472524250874054075591789781264330331690'
 
-const largeSum = (num, n) => {
+const largeSum = (num, n, v) => {
   let sum = 0;
 
   for (let i = 0; i < num.length; i += n) {
     sum += +num.slice(i, n + i)
   }
 
-  return BigInt(sum).toString().slice(0, 10);
+  return BigInt(sum).toString().slice(0, v);
 }
 
-console.log(largeSum(numberSeries, 50))
+console.log(largeSum(numberSeries, 50, 10))
